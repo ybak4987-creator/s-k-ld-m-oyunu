@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-base text-brand-white font-sans antialiased;
+    background-image:
+      radial-gradient(60rem 60rem at 80% -10%, rgba(139, 92, 246, 0.10), transparent 60%),
+      radial-gradient(50rem 50rem at 0% 10%, rgba(59, 130, 246, 0.10), transparent 55%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-brand-purple/40 text-white;
+  }
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-purple/60;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-ink-card border border-ink-border rounded-2xl transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:border-brand-purple/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-purple/10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-brand-purple to-brand-blue text-white hover:shadow-lg hover:shadow-brand-purple/30 px-5 py-3;
+  }
+  .btn-ghost {
+    @apply btn bg-ink-card border border-ink-border text-brand-white hover:border-brand-purple/40 hover:bg-ink-hover px-5 py-3;
+  }
+  .input {
+    @apply w-full bg-ink-deep border border-ink-border rounded-xl px-4 py-3 text-brand-white placeholder:text-brand-white/40 focus:outline-none focus:border-brand-purple/60 focus:ring-2 focus:ring-brand-purple/20 transition-all;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  .glass {
+    @apply backdrop-blur-xl bg-ink-card/70 border border-ink-border/70;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-purple via-brand-blue to-brand-purple bg-clip-text text-transparent;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
