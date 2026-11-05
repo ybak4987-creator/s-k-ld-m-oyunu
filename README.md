@@ -1,1 +1,0 @@
-# s-k-ld-m-oyunu
