@@ -1,0 +1,63 @@
+SIKILDIM! — OYUN MERKEZİ 4.2
+
+KURULUM (Windows / macOS / Linux)
+
+1. ZIP dosyasını bir klasöre çıkart.
+2. Açılan sıkıldım klasörünü VS Code veya terminal ile aç.
+3. Terminalde şu komutu çalıştır:
+
+   npm install
+
+4. Geliştirme sunucusunu başlat:
+
+   npm run dev
+
+5. Terminalde verilen yerel adresi tarayıcıda aç (genellikle http://localhost:5173).
+
+DERLEME VE KONTROL
+
+   npm run typecheck
+   npm run build
+
+GITHUB + VERCEL YAYINI
+
+- Proje klasörünü GitHub deposuna yükle.
+- Vercel'de GitHub deposunu içe aktar.
+- Framework Preset: Vite
+- Build Command: npm run build
+- Output Directory: dist
+- Install Command: npm install
+- Root Directory: ./
+- SPA yönlendirmesi için vercel.json dosyasını koru.
+
+YAPAY ZEKÂ İLE OYUN OLUŞTURMA
+
+1. OpenAI API hesabından bir API anahtarı oluştur.
+2. Vercel Project Settings > Environment Variables bölümünde OPENAI_API_KEY adında bir değişken ekle.
+3. Anahtarı yalnızca Vercel ortam değişkeni olarak sakla. VITE_ öneki kullanma ve anahtarı GitHub'a yükleme.
+4. İsteğe bağlı OPENAI_MODEL değişkeni varsayılan olarak gpt-6-luna değerini kullanır.
+5. Değişken eklendikten sonra Vercel'de yeniden deploy et.
+6. Yerelde API rotasını denemek için Vercel CLI ile `vercel dev` kullan. Sadece `npm run dev` Vercel API rotasını çalıştırmaz.
+
+OpenAI API kullanımı ücret doğurabilir. Harcama sınırı ve kullanımını API sağlayıcının panelinden takip et.
+
+OYUNLAR VE İÇERİKLER
+
+- Oyunlar ve soru havuzları src/data klasöründedir.
+- Oyun merkezi 31 farklı oynanabilir mini oyun içerir.
+- Genel kültür soru havuzu tekrar eden sorular ayıklandıktan sonra 353 benzersiz sorudan oluşur (214 Kolay).
+- Kelime havuzu tekrar eden kelimeler ayıklandıktan sonra 510 benzersiz kelime içerir (328 Kolay, 170 Orta, 12 Zor).
+- Mantık ve sayı testi 129 soruluk havuzdan oturum başına rastgele soru seçer.
+- Sayı dizisi oyunu artan, azalan, ikiye katlama, kare sayılar ve artan fark gibi farklı örüntüler kullanır.
+- Kolay mod günlük hayattan ve temel bilgilerden seçilir.
+- Son kullanılan soru, kelime ve oyun kategorileri mümkün oldukça art arda gelmeyecek şekilde seçilir.
+- Tekrar geçmişi ve kişisel rekorlar tarayıcının localStorage alanında saklanır.
+- Yapay zekâ ile oluşturulan oyunlar aynı tarayıcının yerel kütüphanesinde saklanır; cihazlar arasında senkronize edilmez.
+- Dört Taş aynı cihazda iki kişiyle oynanır; çevrimiçi eşleşme değildir.
+- Marka yazımı her yerde SIKILDIM! şeklindedir. Proje klasörünün adı Türkçe noktasız ı harfiyle sıkıldım şeklindedir.
+
+SORUN GİDERME
+
+- Bir paket bulunamadı hatası alırsan proje klasöründe `npm install` komutunu yeniden çalıştır.
+- Vite önizleme önbelleği sorun çıkarırsa geliştirme sunucusunu durdurup `npm run dev -- --force` komutuyla başlat.
+- Oyunlar sayfası yenilendiğinde 404 oluşmaması için vercel.json dosyasını silme.

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-base text-brand-white font-sans antialiased;
+    background-image: radial-gradient(50rem 42rem at 50% -24rem, rgba(183, 243, 107, 0.075), transparent 68%), linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+    background-size: auto, 36px 36px, 36px 36px;
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-brand-purple/40 text-white;
+  }
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-purple/60;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-ink-card border border-ink-border rounded-2xl transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:border-brand-purple/35 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/20;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-brand-purple text-[#0A1017] hover:bg-[#C8FA82] hover:shadow-lg hover:shadow-brand-purple/15 px-5 py-3;
+  }
+  .btn-ghost {
+    @apply btn bg-ink-card border border-ink-border text-brand-white hover:border-brand-purple/40 hover:bg-ink-hover px-5 py-3;
+  }
+  .input {
+    @apply w-full bg-ink-deep border border-ink-border rounded-xl px-4 py-3 text-brand-white placeholder:text-brand-white/40 focus:outline-none focus:border-brand-purple/60 focus:ring-2 focus:ring-brand-purple/20 transition-all;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  .glass {
+    @apply backdrop-blur-xl bg-ink-card/70 border border-ink-border/70;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-brand-purple;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+
+@layer components {
+  .arcade-panel {
+    @apply relative overflow-hidden rounded-2xl border border-ink-border bg-ink-card shadow-[0_18px_50px_rgba(0,0,0,.18)];
+    background-image: linear-gradient(145deg, rgba(255,255,255,.018), transparent 42%);
+  }
+  .arcade-panel::before { content: ''; position: absolute; left: 18px; top: 0; width: 54px; height: 2px; background: #B7F36B; opacity: .7; border-radius: 0 0 3px 3px; pointer-events: none; }
+  .arcade-hero {
+    @apply relative overflow-hidden rounded-3xl border border-ink-border bg-[#101925];
+    background-image: linear-gradient(115deg, rgba(183,243,107,.09), transparent 42%), linear-gradient(180deg, rgba(255,255,255,.025), transparent);
+  }
+  .arcade-hero::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none; opacity: .12;
+    background-image: linear-gradient(rgba(183,243,107,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(183,243,107,.16) 1px, transparent 1px);
+    background-size: 28px 28px; mask-image: linear-gradient(110deg, transparent 15%, black 100%);
+  }
+  .arcade-icon {
+    @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-brand-purple/25 bg-brand-purple/10 text-brand-purple;
+  }
+  .arcade-stat {
+    @apply inline-flex items-center gap-2 rounded-lg border border-white/10 bg-[#0B121C] px-3 py-2 text-xs text-brand-white/55;
+  }
+  .arcade-stat b { @apply text-white; }
+  .arcade-stat-card { @apply rounded-xl border border-white/10 bg-[#0B121C] p-4; }
+  .arcade-control { @apply flex h-11 w-11 items-center justify-center rounded-xl border border-ink-border bg-[#182536] text-brand-white transition hover:border-brand-purple/40 hover:text-brand-purple active:scale-95; }
+  .arcade-control svg { @apply h-5 w-5; }
+  .arcade-chip { @apply inline-flex items-center gap-1.5 rounded-lg border border-ink-border bg-[#0D1520] px-3 py-1.5 text-xs font-semibold text-brand-white/60 transition hover:border-brand-purple/40 hover:text-brand-purple; }
+  .arcade-note { @apply flex items-center gap-3 rounded-xl border border-ink-border bg-ink-card p-4 text-xs leading-relaxed text-brand-white/55; }
+  .arcade-game-card { @apply relative overflow-hidden rounded-2xl border border-ink-border bg-ink-card transition duration-200 hover:-translate-y-0.5 hover:border-brand-purple/40 hover:bg-[#152131] hover:shadow-xl hover:shadow-black/20; background-image: linear-gradient(135deg, rgba(183,243,107,.035), transparent 48%); }
+  .arcade-game-card::after { content: ''; position: absolute; right: -30px; bottom: -42px; width: 118px; height: 118px; border: 1px solid rgba(183,243,107,.08); border-radius: 24px; transform: rotate(28deg); pointer-events: none; transition: transform .25s ease, border-color .25s ease; }
+  .arcade-game-card:hover::after { transform: rotate(38deg) translate(-5px,-5px); border-color: rgba(183,243,107,.2); }
+  .arcade-ai-banner { @apply relative overflow-hidden rounded-2xl border border-brand-purple/25 bg-[#121E29] transition hover:border-brand-purple/50 hover:bg-[#172536]; }
+}

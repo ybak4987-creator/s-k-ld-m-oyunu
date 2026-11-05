@@ -1,0 +1,60 @@
+SIKILDIM! — OYUN MERKEZİ 4.2
+
+YENİ OYUNLAR
+
+- Mayın Tarlası: İlk açılış güvenli, komşu sayılarıyla alanı temizle.
+- Sayı Kaydırma: 3×3 taşları sıralayarak bulmacayı çöz.
+- Dört Taş: Aynı cihazda iki oyunculu bağlantı oyunu.
+- Resimli Mantık: Satır ve sütun ipuçlarından gizli şekli bul.
+
+TOPLAM OYUN SAYISI
+
+- 31 farklı oynanabilir mini oyun.
+- Kelime, hafıza, dikkat, refleks, mantık ve strateji türleri.
+
+İÇERİK HAVUZLARI
+
+- 353 benzersiz genel kültür sorusu (214 tanesi Kolay seviyede).
+- 510 benzersiz Türkçe kelime (328 Kolay, 170 Orta, 12 Zor).
+- 129 benzersiz mantık ve sayı testi sorusu.
+- Sayı dizisi havuzuna kare sayılar, artan fark, dönüşümlü artış ve ikiye katlama örüntüleri eklendi.
+- Yinelenen soru başlıkları ve kelimeler birleştirildi.
+
+GÖRSEL TASARIM
+
+- Koyu grafit ve lacivert taban korundu.
+- Tek ana vurgu rengi olarak lime/yeşil kullanımı yaygınlaştırıldı.
+- Genel sayfa başlıkları tek renk düzenine alındı.
+- Oyun kartları, paneller ve başlık alanlarına daha belirgin arcade/oyun hissi veren ince ızgara ve çerçeve detayları eklendi.
+- Yapay zekâ oyun atölyesinin form, oyun türü kartları, kayıtlı oyunlar ve açıklama panelleri düzenlendi.
+
+YAPAY ZEKÂ
+
+- Oyun oluşturma: bilgi yarışı, doğru/yanlış, bilmece ve kelime bul.
+- Konu, zorluk ve tur sayısı seçimi.
+- Oluşturulan oyunlar tarayıcıda saklanır ve silinebilir.
+- API anahtarı sunucu ortam değişkeninde tutulmalıdır; istemciye eklenmemelidir.
+- API kullanımı sağlayıcı ücretlerine tabi olabilir.
+
+NOTLAR
+
+- Kullanıcı verileri, skorlar ve oluşturulan oyun kütüphanesi bu sürümde yerel tarayıcı depolamasında tutulur.
+- Dört Taş yerel iki oyunculu oyundur; çevrimiçi çok oyunculu eşleşme içermez.
+- Tam build doğrulaması bu paket hazırlanırken yapılamadı; bağımlılık kurulumu çalışma ortamında zaman aşımına uğradı. Paket kurulumundan sonra npm run typecheck ve npm run build çalıştırılmalıdır.
+
+KÜÇÜK DÜZELTMELER 4.2
+
+- Oyun kütüphanesindeki Simon simgesi, sabit Lucide paket sürümüyle uyumlu bir simgeye çevrildi.
+- Ana sayfadaki rastgele önerilerde strateji ve mantık kategorileri daha doğru gruplandı.
+- Nokta ve Kutu oyununda çizgiler, onları çizen oyuncunun rengiyle kalır.
+- Mayın Tarlası oyununda bayrak sayısı tahta üzerindeki toplam işaret sayısıyla sınırlandırıldı.
+- Yapay zekâ oyun oluşturma API'si için model adı OPENAI_MODEL değişkeniyle değiştirilebilir; varsayılan gpt-6-luna olarak bırakıldı.
+
+GÖRSEL VE KULLANIM DÜZENLEMELERİ 4.2
+
+- Ana sayfa istatistik, görev ve öneri panellerinde marka vurgusu tek lime tonuna yaklaştırıldı.
+- İkincil mavi tonu daha sakin bir gri-maviye çekildi; ana vurgu rengi koyu zeminde daha net ayrışır.
+- Yapay zekâ oyun atölyesi başlığı, adım akışı ve özellik özeti daha okunaklı hâle getirildi.
+- Kelime Avı kartının simgesi, sabit Lucide sürümüyle uyumlu Search simgesine alındı.
+- Oyun tahtalarının kendi işlevsel renkleri (ör. oyuncu taşları ve doğru/yanlış geri bildirimi) korunarak genel site renk karmaşası azaltıldı.
+- Kelime havuzundaki karışık alfabe kaynaklı bir karakter hatası düzeltildi.
